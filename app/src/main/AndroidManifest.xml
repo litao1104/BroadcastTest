@@ -13,10 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BroadcastTest">
         <receiver
+            android:name=".MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.broadcasttest.MY_BRODCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver
             android:name=".BootCompleteReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
-
+            android:exported="true" >
+        </receiver>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
