@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.example.broadcasttest.MY_BROADCAST" />
 
     <application
         android:allowBackup="true"
@@ -13,18 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BroadcastTest">
         <receiver
+            android:name=".TaoReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <receiver
             android:name=".MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.example.broadcasttest.MY_BRODCAST" />
+                <action android:name="com.example.broadcasttest.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
         <receiver
             android:name=".BootCompleteReceiver"
             android:enabled="true"
-            android:exported="true" >
-        </receiver>
+            android:exported="true"></receiver>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
